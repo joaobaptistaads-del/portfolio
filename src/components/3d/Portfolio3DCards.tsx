@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { RoundedBox } from '@react-three/drei';
@@ -33,9 +33,8 @@ function AnimatedCard3D({ position, rotation, isFlipped, onClick, frontContent, 
       rotation={rotation}
       onClick={onClick}
     >
-      <motion.group
-        animate={{ rotateY: isFlipped ? Math.PI : 0 }}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
+      <group
+        rotation={[0, isFlipped ? Math.PI : 0, 0]}
       >
         {/* Front */}
         <RoundedBox args={[2, 2.5, 0.1]} radius={0.05} smoothness={4}>
@@ -59,7 +58,7 @@ function AnimatedCard3D({ position, rotation, isFlipped, onClick, frontContent, 
             side={THREE.BackSide}
           />
         </RoundedBox>
-      </motion.group>
+      </group>
     </group>
   );
 }
