@@ -11,6 +11,10 @@ export interface AuthUser {
  * Sign in with email and password
  */
 export async function signIn(email: string, password: string) {
+  if (!supabase) {
+    throw new Error("Supabase not configured");
+  }
+
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
@@ -27,6 +31,10 @@ export async function signIn(email: string, password: string) {
  * Sign out
  */
 export async function signOut() {
+  if (!supabase) {
+    throw new Error("Supabase not configured");
+  }
+
   const { error } = await supabase.auth.signOut();
 
   if (error) {
@@ -38,6 +46,10 @@ export async function signOut() {
  * Get current session
  */
 export async function getSession(): Promise<Session | null> {
+  if (!supabase) {
+    return null;
+  }
+
   const { data, error } = await supabase.auth.getSession();
 
   if (error) {
@@ -52,6 +64,10 @@ export async function getSession(): Promise<Session | null> {
  * Get current user
  */
 export async function getCurrentUser(): Promise<User | null> {
+  if (!supabase) {
+    return null;
+  }
+
   const { data, error } = await supabase.auth.getUser();
 
   if (error) {
@@ -68,6 +84,10 @@ export async function getCurrentUser(): Promise<User | null> {
 export function onAuthStateChange(
   callback: (user: User | null) => void
 ) {
+  if (!supabase) {
+    return { data: { subscription: { unsubscribe: () => undefined } } };
+  }
+
   return supabase.auth.onAuthStateChange((_event, session) => {
     callback(session?.user ?? null);
   });

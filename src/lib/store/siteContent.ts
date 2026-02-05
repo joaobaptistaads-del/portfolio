@@ -101,6 +101,11 @@ export function useSiteContent(language: "pt" | "en") {
   };
 
   const loadFromSupabase = async () => {
+    if (!supabase) {
+      loadFromStorage();
+      return;
+    }
+
     const { data, error } = await supabase
       .from("site_content")
       .select("content")

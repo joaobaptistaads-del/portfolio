@@ -18,6 +18,10 @@ export async function uploadImage(
   folder?: string
 ): Promise<ImageUploadResult> {
   try {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     // Validate file type
     if (!file.type.startsWith('image/')) {
       throw new Error('File must be an image');
@@ -73,6 +77,10 @@ export async function deleteImage(
   bucket: string = 'images'
 ): Promise<void> {
   try {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     const { error } = await supabase.storage.from(bucket).remove([path]);
 
     if (error) {

@@ -131,6 +131,11 @@ export function PortfolioSection() {
     };
 
     const loadFromSupabase = async () => {
+      if (!supabase) {
+        loadFromStorage();
+        return;
+      }
+
       const { data, error } = await supabase
         .from("projects")
         .select("id,title,description,image,link,technologies,github")
