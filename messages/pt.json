@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "cv": "Currículo",
+    "contact": "Contato",
+    "admin": "Admin"
+  },
+  "hero": {
+    "title": "João Baptista Adriano",
+    "subtitle": "Sistemas Analyst & Desenvolvedor Full Stack",
+    "description": "Especialista em estratégias virais no YouTube, manutenção de hardware e soluções web completas",
+    "cta": "Explorar Meu Trabalho"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou um profissional multidisciplinar com expertise em desenvolvimento full stack, marketing digital e estratégias de conteúdo.",
+    "titles": [
+      "Analista de Sistemas",
+      "Desenvolvedor Full Stack",
+      "Especialista em Marketing Digital"
+    ],
+    "skills": "Competências"
+  },
+  "skills": {
+    "title": "Minhas Competências",
+    "technical": "Técnicas",
+    "languages": "Idiomas"
+  },
+  "projects": {
+    "title": "Portfólio",
+    "viewProject": "Ver Projeto",
+    "liveDemo": "Demo ao Vivo"
+  },
+  "cv": {
+    "title": "Currículo Vitae",
+    "download": "Baixar CV",
+    "experience": "Experiência",
+    "education": "Educação"
+  },
+  "admin": {
+    "title": "Painel de Administração",
+    "logout": "Sair",
+    "projects": "Projetos",
+    "profile": "Perfil",
+    "addProject": "Adicionar Projeto",
+    "editProject": "Editar Projeto",
+    "deleteProject": "Deletar Projeto",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "login": "Entrar",
+    "email": "Email",
+    "password": "Senha"
+  }
+}
